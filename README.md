@@ -5,7 +5,7 @@ A basic web application that fetches transcripts from YouTube videos and display
 ## Features
 
 - **Clean Interface**: Simple input form for YouTube URLs or video IDs
-- **Real-time Fetching**: Fetches transcripts using the unofficial YouTube API
+- **Real-time Fetching**: Fetches transcripts using yt-dlp for reliable extraction
 - **Responsive Design**: Works on desktop and mobile devices
 - **Error Handling**: Graceful error handling for invalid URLs or unavailable transcripts
 - **Timestamped Display**: Shows transcript with timestamps for easy navigation
@@ -15,7 +15,7 @@ A basic web application that fetches transcripts from YouTube videos and display
 
 - **Backend**: Node.js, Express.js
 - **Frontend**: React.js
-- **API**: youtube-transcript npm package
+- **API**: yt-dlp for reliable transcript extraction
 - **Styling**: CSS with responsive design
 
 ## Project Structure
@@ -43,21 +43,29 @@ basic_web_app/
 
 - Node.js (v14 or higher)
 - npm
+- Python 3.x with pip
+- yt-dlp (installed via pip)
 
 ### Installation
 
-1. **Clone/Download the project**
+1. **Clone the repository**
    ```bash
+   git clone <repository-url>
    cd basic_web_app
    ```
 
-2. **Install Backend Dependencies**
+2. **Install yt-dlp**
+   ```bash
+   pip install yt-dlp
+   ```
+
+3. **Install Backend Dependencies**
    ```bash
    cd backend
    npm install
    ```
 
-3. **Install Frontend Dependencies**
+4. **Install Frontend Dependencies**
    ```bash
    cd ../frontend
    npm install
@@ -163,11 +171,54 @@ Health check endpoint.
 ### Backend
 - express: Web framework for Node.js
 - cors: Enable CORS for cross-origin requests
-- youtube-transcript: Fetch YouTube video transcripts
+- yt-dlp: Reliable YouTube transcript extraction
 
 ### Frontend
 - react: JavaScript library for building user interfaces
 - react-dom: React package for DOM manipulation
+
+## Git Workflow
+
+### Basic Git Commands
+
+```bash
+# Check repository status
+git status
+
+# Add changes to staging
+git add .
+
+# Commit changes
+git commit -m "Your commit message"
+
+# View commit history
+git log --oneline
+
+# Create a new branch
+git checkout -b feature/new-feature
+
+# Switch branches
+git checkout main
+
+# Merge branches
+git merge feature/new-feature
+```
+
+### Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Branching Strategy
+
+- `main`: Production-ready code
+- `develop`: Development branch for integration
+- `feature/*`: New features
+- `bugfix/*`: Bug fixes
+- `hotfix/*`: Critical fixes
 
 ## License
 
